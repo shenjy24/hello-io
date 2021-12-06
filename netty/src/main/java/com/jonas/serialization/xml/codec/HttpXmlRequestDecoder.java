@@ -23,11 +23,11 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
  * @date 2020-04-03
  */
 public class HttpXmlRequestDecoder extends AbstractHttpXmlDecoder<FullHttpRequest> {
-    protected HttpXmlRequestDecoder(Class<?> clazz) {
+    public HttpXmlRequestDecoder(Class<?> clazz) {
         super(clazz);
     }
 
-    protected HttpXmlRequestDecoder(Class<?> clazz, boolean isPrint) {
+    public HttpXmlRequestDecoder(Class<?> clazz, boolean isPrint) {
         super(clazz, isPrint);
     }
 

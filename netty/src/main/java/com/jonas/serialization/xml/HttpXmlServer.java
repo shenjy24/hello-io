@@ -1,5 +1,6 @@
 package com.jonas.serialization.xml;
 
+import com.jonas.serialization.xml.codec.HttpXmlRequestDecoder;
 import com.jonas.serialization.xml.codec.HttpXmlResponseDecoder;
 import com.jonas.serialization.xml.codec.HttpXmlResponseEncoder;
 import com.jonas.serialization.xml.pojo.Order;
@@ -42,7 +43,7 @@ public class HttpXmlServer {
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline().addLast("http-decoder", new HttpRequestDecoder());
                             ch.pipeline().addLast("http-aggregator", new HttpObjectAggregator(65536));
-                            ch.pipeline().addLast("xml-decoder", new HttpXmlResponseDecoder(Order.class, true));
+                            ch.pipeline().addLast("xml-decoder", new HttpXmlRequestDecoder(Order.class, true));
                             ch.pipeline().addLast("http-encoder", new HttpResponseEncoder());
                             ch.pipeline().addLast("xml-encoder", new HttpXmlResponseEncoder());
                             ch.pipeline().addLast("xml-server-handler", new HttpXmlServerHandler());
