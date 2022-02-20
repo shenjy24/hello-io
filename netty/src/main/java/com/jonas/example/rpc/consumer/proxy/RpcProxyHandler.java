@@ -1,9 +1,9 @@
 package com.jonas.example.rpc.consumer.proxy;
 
-import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
-public class RpcProxyHandler extends ChannelHandlerAdapter {
+public class RpcProxyHandler extends ChannelInboundHandlerAdapter {
 
     private Object response;
 

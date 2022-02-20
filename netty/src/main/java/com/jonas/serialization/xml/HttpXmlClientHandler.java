@@ -28,7 +28,7 @@ public class HttpXmlClientHandler extends SimpleChannelInboundHandler<HttpXmlRes
     }
 
     @Override
-    protected void messageReceived(ChannelHandlerContext ctx, HttpXmlResponse msg) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, HttpXmlResponse msg) throws Exception {
         System.out.println("The client receive response of http header is : " + msg.getResponse().headers().names());
         System.out.println("The client receive response of http body is : " + msg.getResult());
     }

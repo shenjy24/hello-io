@@ -3,6 +3,7 @@ package com.jonas.example.rpc.registry;
 import com.jonas.example.rpc.protocol.InvokerProtocol;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
 import java.io.File;
 import java.lang.reflect.Method;
@@ -15,7 +16,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * 实现服务注册和服务调用的功能。
  * 因为所有模块创建在同一个项目中，所以为了简化，服务端没有采用远程调用，而是直接扫描本地Class，然后利用反射调用。
  */
-public class RegistryHandler extends ChannelHandlerAdapter {
+public class RegistryHandler extends ChannelInboundHandlerAdapter {
     //保存所有可用的服务
     public static ConcurrentHashMap<String, Object> registryMap = new ConcurrentHashMap<>();
     //保存所有相关的服务类

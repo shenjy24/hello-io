@@ -1,8 +1,8 @@
 package com.jonas.serialization.protobuf;
 
 import com.jonas.serialization.protobuf.proto.SubscribeReqProto;
-import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
  * SubReqClientHandler
@@ -11,7 +11,7 @@ import io.netty.channel.ChannelHandlerContext;
  * @version 1.0
  * @date 2020-03-28
  */
-public class SubReqClientHandler extends ChannelHandlerAdapter {
+public class SubReqClientHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {

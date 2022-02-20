@@ -79,7 +79,7 @@ public class Tomcat {
         }
     }
 
-    public class TomcatHandler extends ChannelHandlerAdapter {
+    public class TomcatHandler extends ChannelInboundHandlerAdapter {
 
         @Override
         public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {

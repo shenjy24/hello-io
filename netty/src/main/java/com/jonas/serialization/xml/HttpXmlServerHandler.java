@@ -35,7 +35,7 @@ import static io.netty.handler.codec.http.HttpVersion.HTTP_1_1;
 public class HttpXmlServerHandler extends SimpleChannelInboundHandler<HttpXmlRequest> {
 
     @Override
-    protected void messageReceived(ChannelHandlerContext ctx, HttpXmlRequest xmlRequest) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, HttpXmlRequest xmlRequest) throws Exception {
         HttpRequest request = xmlRequest.getRequest();
         Order order = (Order) xmlRequest.getBody();
         System.out.println("Http server receive request : " + order);

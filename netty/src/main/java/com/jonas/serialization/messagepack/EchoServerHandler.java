@@ -1,7 +1,7 @@
 package com.jonas.serialization.messagepack;
 
-import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
  * EchoClientHandler
@@ -10,7 +10,7 @@ import io.netty.channel.ChannelHandlerContext;
  * @version 1.0
  * @date 2020-03-27
  */
-public class EchoServerHandler extends ChannelHandlerAdapter {
+public class EchoServerHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {

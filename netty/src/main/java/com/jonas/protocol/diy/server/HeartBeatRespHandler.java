@@ -18,8 +18,8 @@ package com.jonas.protocol.diy.server;
 import com.jonas.protocol.diy.common.MessageType;
 import com.jonas.protocol.diy.pojo.Header;
 import com.jonas.protocol.diy.pojo.NettyMessage;
-import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
  * 服务端心跳应答处理器
@@ -28,7 +28,7 @@ import io.netty.channel.ChannelHandlerContext;
  * @version 1.0
  * @date 2021年12月06日
  */
-public class HeartBeatRespHandler extends ChannelHandlerAdapter {
+public class HeartBeatRespHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {

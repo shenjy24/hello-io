@@ -20,6 +20,7 @@ import com.jonas.protocol.diy.pojo.Header;
 import com.jonas.protocol.diy.pojo.NettyMessage;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
  * 客户端握手认证处理器，用于在通道激活时发起握手请求
@@ -28,7 +29,7 @@ import io.netty.channel.ChannelHandlerContext;
  * @version 1.0
  * @date 2020年04月05日
  */
-public class LoginAuthReqHandler extends ChannelHandlerAdapter {
+public class LoginAuthReqHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {

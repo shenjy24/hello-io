@@ -1,8 +1,8 @@
 package com.jonas.serialization.messagepack;
 
 import com.jonas.serialization.User;
-import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
  * EchoClientHandler
@@ -11,7 +11,7 @@ import io.netty.channel.ChannelHandlerContext;
  * @version 1.0
  * @date 2020-03-27
  */
-public class EchoClientHandler extends ChannelHandlerAdapter {
+public class EchoClientHandler extends ChannelInboundHandlerAdapter {
     private final int sendNumber;
 
     public EchoClientHandler(int sendNumber) {

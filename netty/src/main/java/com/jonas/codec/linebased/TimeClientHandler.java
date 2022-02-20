@@ -2,8 +2,8 @@ package com.jonas.codec.linebased;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
 import java.util.logging.Logger;
 
@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * @version 1.0
  * @date 2020-03-20
  */
-public class TimeClientHandler extends ChannelHandlerAdapter {
+public class TimeClientHandler extends ChannelInboundHandlerAdapter {
 
     private static final Logger logger = Logger.getLogger(TimeClientHandler.class.getName());
 

@@ -1,8 +1,8 @@
 package com.jonas.codec.fixedlength;
 
 import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
  * TimeClientHandler
@@ -11,7 +11,7 @@ import io.netty.channel.ChannelHandlerContext;
  * @version 1.0
  * @date 2020-03-20
  */
-public class EchoClientHandler extends ChannelHandlerAdapter {
+public class EchoClientHandler extends ChannelInboundHandlerAdapter {
 
     private static final String ECHO_REQ = "Hi, Jonas. Welcome to Netty.";
 
