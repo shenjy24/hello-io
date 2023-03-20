@@ -26,9 +26,8 @@ public class TimeServer {
              * 线程池和消息队列都是有界的，无论客户端并发连接数多大，都不会导致线程个数过于膨胀或者内存溢出
              */
             TimeServerHandlerExecutorPool singleExecutor = new TimeServerHandlerExecutorPool(50, 10000);
-            Socket socket = null;
             while (true) {
-                socket = server.accept();
+                Socket socket = server.accept();
                 singleExecutor.execute(new TimeServerHandler(socket));
             }
         } catch (IOException e) {
