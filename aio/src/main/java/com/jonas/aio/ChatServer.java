@@ -31,7 +31,7 @@ public class ChatServer {
             //以指定线程池来创建一个AsynchronousServerSocketChannel
             AsynchronousServerSocketChannel serverChannel =
                     AsynchronousServerSocketChannel.open(channelGroup).bind(new InetSocketAddress(port));
-            //使用CompletionHandler接收来自客户端的连接请求(回调)
+            //使用CompletionHandler接收来自客户端的连接请求(回调)，此处并不会发生阻塞
             serverChannel.accept(null, new AcceptHandler(serverChannel));
             // 主线程继续自己的行为
             Thread.sleep(5000);
