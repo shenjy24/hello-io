@@ -21,6 +21,7 @@
         <module>biop</module>
         <module>nio</module>
         <module>netty</module>
+        <module>aio</module>
     </modules>
 
     <dependencies>
