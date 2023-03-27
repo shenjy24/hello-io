@@ -11,6 +11,10 @@ import io.netty.handler.codec.serialization.ClassResolvers;
 import io.netty.handler.codec.serialization.ObjectDecoder;
 import io.netty.handler.codec.serialization.ObjectEncoder;
 
+/**
+ * 服务治理：所有服务间不允许直接调用，而是先到注册中心进行登记，再由注册中心统一协调和管理所有服务的状态并对外发布，
+ * 调用者只需要记住服务名称，去注册中心获取服务即可。
+ */
 public class RpcRegistry {
     private final int port;
 
